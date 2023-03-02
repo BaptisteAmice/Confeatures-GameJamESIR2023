@@ -1,9 +1,6 @@
-# game-jam-template
-Game Jam Template for Godot 3. Feel free to use.
+# Jeu confiture
 
-## Features
-* Dialogue system
-* Settings & keybinds
-* Saving and loading
-* 2d players (sidescroller, top-down, click to move)
-* Title screen and credits
+
+Crédits
+* Librairies utilisées
+** Game Jam Template (exuin)
