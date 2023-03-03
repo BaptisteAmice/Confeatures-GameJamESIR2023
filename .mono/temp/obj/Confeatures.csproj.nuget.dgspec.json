@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Desktop\\GameJamEsir\\git\\Confeatures.csproj": {}
+    "/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/Confeatures.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Desktop\\GameJamEsir\\git\\Confeatures.csproj": {
+    "/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/Confeatures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\GameJamEsir\\git\\Confeatures.csproj",
+        "projectUniqueName": "/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/Confeatures.csproj",
         "projectName": "Confeatures",
-        "projectPath": "C:\\Users\\PC\\Desktop\\GameJamEsir\\git\\Confeatures.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\GameJamEsir\\git\\.mono\\temp\\obj\\",
+        "projectPath": "/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/Confeatures.csproj",
+        "packagesPath": "/home/kinako/.nuget/packages/",
+        "outputPath": "/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/kinako/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net472"
@@ -41,11 +41,11 @@
             "Microsoft.NETFramework.ReferenceAssemblies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[1.0.2, )",
+              "version": "[1.0.3, )",
               "autoReferenced": true
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }
