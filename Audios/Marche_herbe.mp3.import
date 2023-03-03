@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Marche_herbe.mp3-305dd00f2d89763d5b73677ba5c35be8.mp3str"
+
+[deps]
+
+source_file="res://Audios/Marche_herbe.mp3"
+dest_files=[ "res://.import/Marche_herbe.mp3-305dd00f2d89763d5b73677ba5c35be8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
