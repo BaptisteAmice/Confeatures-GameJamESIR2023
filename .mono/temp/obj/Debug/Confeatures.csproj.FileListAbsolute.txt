@@ -1,0 +1,9 @@
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/bin/Debug/Confeatures.dll
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/bin/Debug/Confeatures.pdb
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/obj/Debug/Confeatures.csproj.AssemblyReference.cache
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/obj/Debug/Confeatures.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/obj/Debug/Confeatures.AssemblyInfoInputs.cache
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/obj/Debug/Confeatures.AssemblyInfo.cs
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/obj/Debug/Confeatures.csproj.CoreCompileInputs.cache
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/obj/Debug/Confeatures.dll
+/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/.mono/temp/obj/Debug/Confeatures.pdb
