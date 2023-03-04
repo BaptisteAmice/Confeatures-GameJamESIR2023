@@ -33,4 +33,10 @@ public class mouvementBonhomme : KinematicBody2D {
         GetInput(delta);
         velocity = MoveAndSlide(velocity, new Vector2(0,-1));
     }
+
+    public void _on_DeadZone_body_entered(object body) {
+        if (body is mouvementBonhomme) {
+            GD.Print("DeadZone touché");
+        }
+    }
 }
