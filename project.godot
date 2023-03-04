@@ -13,6 +13,16 @@ config_version=4
 config/name="Confeatures"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=512
+window/size/height=300
+window/stretch/mode="2d"
+
+[global]
+
+import=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
