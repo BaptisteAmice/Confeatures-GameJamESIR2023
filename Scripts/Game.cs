@@ -25,17 +25,21 @@ public class Game : Node2D
 
         Drapeaux_setup();
 
+        //get Node Pieces
+        Node pieces = GetNode("Pieces");
+        
+        Godot.Collections.Array pieceNodes = pieces.GetChildren();
 
-        Godot.Collections.Array gameChildren = GetChildren();
         //count piece note in array
-        foreach (Node child in gameChildren)
+        foreach (Node child in pieceNodes)
         {
             if (child is Piece)
             {
                 piecesNumber++;
             }
         }
-        
+
+
         //set piece number in RichTextLabel
         SetPiecesInPlayer(piecesNumber);
 
@@ -43,7 +47,7 @@ public class Game : Node2D
         GD.Print(piecesNumber);
 
         //connects signal to method for piece
-        GetNode("Piece").Connect("PieceTouched", this, "PieceCollected");
+       // GetNode("Piece").Connect("PieceTouched", this, "PieceCollected");
 
         
     }
@@ -110,6 +114,7 @@ public class Game : Node2D
 
     public void SetPiecesInPlayer(int number)
     {
+<<<<<<< HEAD
                 GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces").GetNode<RichTextLabel>("ComptePieces").Text = number.ToString();
     }
 
@@ -124,6 +129,10 @@ public class Game : Node2D
     if (Input.IsActionJustPressed("interect") && toucherPoto) {
         AnimatedSprite sprite1=GetNode<AnimatedSprite>("Pillier13");
         AnimatedSprite sprite2=GetNode<AnimatedSprite>("Pillier14");
+=======
+        //set piece number in RichTextLabel
+        GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces").GetNode<RichTextLabel>("ComptePieces").Text = number.ToString();
+>>>>>>> 6a5f05856c8a49b2118598f7f449870a19782d94
 
         sprite1.Rotation=0.10472f;
         sprite2.Rotation=-0.10472f;
