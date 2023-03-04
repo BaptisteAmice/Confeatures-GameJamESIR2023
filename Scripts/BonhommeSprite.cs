@@ -11,11 +11,11 @@ public class BonhommeSprite : AnimatedSprite {
         }
 
         if (Input.IsActionPressed("move_right")) {
-            this.FlipH=false;
+            this.FlipH=true;
         }
 
         if (Input.IsActionPressed("move_left")) {
-            this.FlipH=true;
+            this.FlipH=false;
         }
     }
 
