@@ -27,8 +27,10 @@ public class Game : Node2D
         piecesNumber = GetNode("Piece").GetChildCount();
         GD.Print(piecesNumber);
 
-        //connect signal to method
+        //connects signal to method for piece
         GetNode("Piece").Connect("PieceTouched", this, "PieceTouched");
+
+        
     }
 
     public void PieceTouched()
@@ -59,6 +61,8 @@ public class Game : Node2D
         foreach (Node drapeau in drapeauNodes)
         {
             GD.Print(drapeau.Name);
+            //connects signal to method for drapeau
+            drapeau.Connect("BreakDrapeau", this, "BriseDrapeau");
         }
 
         //get first drapeau
@@ -75,6 +79,21 @@ public class Game : Node2D
         checkpointPosition.y -= 10;
         //teleport Bonhomme to checkpoint position
         bonhomme.Position = checkpointPosition;
+    }
+
+    public void BriseDrapeau(Drapeau drapeau) {
+        //checkpoint becomes value next to drapeau in drapeauNodes
+        int index = drapeauNodes.IndexOf(drapeau);
+        if (index < drapeauNodes.Count - 1)
+        {
+            checkpoint = (Drapeau)drapeauNodes[index + 1];
+        }
+        else
+        {
+            checkpoint = (Drapeau)drapeauNodes[0];
+        }
+        //hide the drapeau
+        drapeau.Hide();
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
