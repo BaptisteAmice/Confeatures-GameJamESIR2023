@@ -6,10 +6,11 @@ public class mouvementBonhomme : KinematicBody2D {
 
     public Vector2 velocity=new Vector2();
     public int sens;
+    
 
     public void GetInput() {
         velocity = new Vector2();
-        Sprite sprite = GetNode<Sprite>("BonhommeSprite");
+        AnimatedSprite sprite = GetNode<AnimatedSprite>("BonhommeSprite");
 
         if (Input.IsActionPressed("move_right")) {
             velocity.x += 1;
@@ -30,6 +31,16 @@ public class mouvementBonhomme : KinematicBody2D {
         }
 
         velocity = velocity.Normalized() * speed;
+    }
+
+    public void SetSprite() {
+        AnimatedSprite sprite = GetNode<AnimatedSprite>("BonhommeSprite");
+
+        if (Input.IsActionPressed("move_right") || Input.IsActionPressed("move_left")) {
+            sprite.Playing=true;
+        } else {
+            sprite.Playing=false;
+        }
     }
 
     public override void _PhysicsProcess(float delta) {
