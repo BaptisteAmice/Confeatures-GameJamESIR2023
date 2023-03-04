@@ -23,7 +23,7 @@ public class mouvementBonhomme : KinematicBody2D {
             timer.Start(timerDelay);
         }
         if (timer.TimeLeft>0) {
-             velocity.y+=delta*jump*(1-(timerDelay/(float)(timer.TimeLeft)));
+             velocity.y+=delta*jump;
         } else {
                 velocity.y+=delta*gravity;
         }
