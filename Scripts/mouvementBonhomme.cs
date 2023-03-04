@@ -12,7 +12,7 @@ public class mouvementBonhomme : KinematicBody2D {
 
     public void GetInput(float delta) {
         velocity=new Vector2();
-        AnimatedSprite sprite=GetNode<AnimatedSprite>("BonhommeSprite");
+        AnimatedSprite sprite=GetNode<AnimatedSprite>("BonhommeSpriteMarche");
         Timer timer=GetNode<Timer>("TimerJump");
 
         if (Input.IsActionPressed("move_right") ||Input.IsActionPressed("move_left")) {
