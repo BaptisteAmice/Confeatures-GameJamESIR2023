@@ -1,12 +1,7 @@
 using Godot;
 using System;
 
-public class Drapeau : Area2D
-{
-	// Declare member variables here. Examples:
-	// private int a = 2;
-	// private string b = "text";
-
+public class Drapeau : Area2D {
 	static public int numDrapeau = 0;
 	public int idDrapeau;
 	public bool breakable=false;
@@ -68,13 +63,4 @@ public class Drapeau : Area2D
 	{
 		GetInput(delta);
 	}
-
-
-
-
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
 }
