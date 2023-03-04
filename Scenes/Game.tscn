@@ -697,4 +697,12 @@ rotation = -0.0977384
 [node name="Mechant" parent="." instance=ExtResource( 24 )]
 position = Vector2( 50, 16 )
 
+[node name="Pilier13" parent="." instance=ExtResource( 7 )]
+position = Vector2( -1934, -42 )
+rotation = 0.109956
+
+[node name="Pilier14" parent="." instance=ExtResource( 7 )]
+position = Vector2( -2016, -18 )
+rotation = -0.10821
+
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
