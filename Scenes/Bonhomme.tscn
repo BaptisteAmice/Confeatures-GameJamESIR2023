@@ -54,6 +54,7 @@ one_shot = true
 offset = Vector2( -60, 0 )
 current = true
 zoom = Vector2( 0.6, 0.6 )
+limit_bottom = 100
 
 [node name="BonhommeSpritePause" type="Sprite" parent="."]
 position = Vector2( -4, -1.49012e-08 )
