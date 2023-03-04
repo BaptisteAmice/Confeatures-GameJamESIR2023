@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Sprites/terrain_herbe.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Obstacles/Pilier.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Sprites/montagnes.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/collines.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/touffe_dherbe.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/rocher.png" type="Texture" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -401,6 +402,20 @@ shader_param/wave_length = 200.0
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "rocher.png 1"
+1/texture = ExtResource( 18 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 32, 18 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 10 )
@@ -498,31 +513,31 @@ position = Vector2( -484, 64 )
 position = Vector2( 164, 16 )
 z_index = -1
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Fond" type="ParallaxBackground" parent="."]
 
-[node name="Cielclair" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Cielclair" type="ParallaxLayer" parent="Fond"]
 motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 600, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Cielclair"]
+[node name="Sprite" type="Sprite" parent="Fond/Cielclair"]
 texture = ExtResource( 13 )
 centered = false
 offset = Vector2( 0, -350 )
 
-[node name="Cielfoncé" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Cielfoncé" type="ParallaxLayer" parent="Fond"]
 motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 600, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Cielfoncé"]
+[node name="Sprite" type="Sprite" parent="Fond/Cielfoncé"]
 texture = ExtResource( 14 )
 centered = false
 offset = Vector2( 0, -350 )
 
-[node name="Montagne" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Montagne" type="ParallaxLayer" parent="Fond"]
 motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 600, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Montagne"]
+[node name="Sprite" type="Sprite" parent="Fond/Montagne"]
 light_mask = 0
 position = Vector2( 1, 59 )
 rotation = 0.00189629
@@ -530,11 +545,12 @@ texture = ExtResource( 15 )
 centered = false
 offset = Vector2( 0, -300 )
 
-[node name="Colline" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Colline" type="ParallaxLayer" parent="Fond"]
 motion_scale = Vector2( 0.8, 1 )
 motion_mirroring = Vector2( 600, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Colline"]
+[node name="Sprite" type="Sprite" parent="Fond/Colline"]
+modulate = Color( 0.301961, 0.988235, 0.682353, 1 )
 light_mask = 0
 position = Vector2( 1, 89 )
 texture = ExtResource( 16 )
@@ -543,9 +559,10 @@ offset = Vector2( 0, -250 )
 
 [node name="Herbe" type="TileMap" parent="."]
 material = SubResource( 20 )
+z_index = 5
 tile_set = SubResource( 18 )
 cell_size = Vector2( 16, 8 )
 format = 1
-tile_data = PoolIntArray( 524265, 0, 0, 524266, 0, 0, 524267, 0, 0, 524268, 0, 0, 589807, 0, 0, 589808, 0, 0, 589809, 0, 0 )
+tile_data = PoolIntArray( 458737, 1, 0, 524265, 0, 0, 524266, 0, 0, 524267, 0, 0, 524268, 0, 0, 589807, 0, 0, 589808, 0, 0, 589809, 0, 0 )
 
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
