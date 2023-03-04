@@ -599,6 +599,6 @@ position = Vector2( 329, 15 )
 rotation = 1.27409
 
 [node name="Pilier10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 353, -9 )
+position = Vector2( 353, -8 )
 
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
