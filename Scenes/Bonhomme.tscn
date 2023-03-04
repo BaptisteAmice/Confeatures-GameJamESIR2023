@@ -28,3 +28,6 @@ shape = SubResource( 1 )
 [node name="BonhommeSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 frame = 1
+
+[node name="TimerJump" type="Timer" parent="."]
+one_shot = true
