@@ -27,7 +27,9 @@ shape = SubResource( 1 )
 position = Vector2( 0, -44 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3, 8 )
 frames = SubResource( 2 )
+frame = 1
 
 [connection signal="body_entered" from="." to="." method="_on_Drapeau_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Drapeau_body_exited"]
