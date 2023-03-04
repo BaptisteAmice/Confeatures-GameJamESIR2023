@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kjeHHi2nvna75GOK3n14FS8UmGierk+JIMZY/vKSRBInsTki/gecAE/RCvU4NWEL91zWcvqG3lTlmVQXUsbW+g==",
+  "dgSpecHash": "psQeLYeDJtc+nldtYTX3co41Rbx89RP+rq/mXENHDLCh5Pb5SCJd6Eje+MZ+QFuLr7OSWFhWXYBsHmYi4DRbmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\GameJamEsir\\git\\Confeatures.csproj",
+  "projectFilePath": "/mnt/b3125abf-5428-4fae-8652-b896d8e2b3ec/Code/Godot/GameJamESIR/Confeatures.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+    "/home/kinako/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/kinako/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.3/microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
   ],
   "logs": []
 }

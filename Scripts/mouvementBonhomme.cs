@@ -45,6 +45,7 @@ public class mouvementBonhomme : KinematicBody2D {
 
     public override void _PhysicsProcess(float delta) {
         GetInput();
+        SetSprite();
         velocity = MoveAndSlide(velocity);
     }
 }
