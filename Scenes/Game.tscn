@@ -425,10 +425,10 @@ shape = SubResource( 9 )
 [node name="Drapeaux" type="Node" parent="."]
 
 [node name="Drapeau2" parent="Drapeaux" instance=ExtResource( 5 )]
-position = Vector2( -484, 39 )
+position = Vector2( -484, 64 )
 
 [node name="Drapeau" parent="Drapeaux" instance=ExtResource( 5 )]
-position = Vector2( 161, -8 )
+position = Vector2( 164, 16 )
 z_index = -1
 
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
