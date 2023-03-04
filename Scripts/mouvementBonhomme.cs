@@ -5,8 +5,8 @@ public class mouvementBonhomme : KinematicBody2D {
     public Vector2 velocity=new Vector2();
 
     private const int speed=200;
-    private const int gravity=14000;
-    private const float jump=-20000;
+    private const int gravity=11000;
+    private const float jump=-22000;
 
     private const float timerDelay=0.15f;
 
