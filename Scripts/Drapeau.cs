@@ -24,6 +24,15 @@ public class Drapeau : Area2D
 		}
 	}
 
+	public void _on_Drapeau_body_exited(object body)
+	{
+		if (body is mouvementBonhomme)
+		{
+			pressKey.CacheScene();
+			GD.Print("Drapeau quitté");
+		}
+	}
+
 
 
 
