@@ -2,6 +2,8 @@ using Godot;
 using System;
 
 public class mouvementBonhomme : KinematicBody2D {
+    [Signal] public delegate void BonhommeMortEventHandler();
+
     public Vector2 velocity=new Vector2();
 
     private const int speed=200;
@@ -34,4 +36,8 @@ public class mouvementBonhomme : KinematicBody2D {
         velocity = MoveAndSlide(velocity, new Vector2(0,-1));
     }
 
+}
+
+public partial class CustomSignal : KinematicBody2D {
+    [Signal] public delegate void BonhommeMortEventHandler();
 }
