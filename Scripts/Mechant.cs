@@ -15,10 +15,11 @@ public class Mechant : Area2D {
 	public override void _PhysicsProcess(float delta) {
 		if (Input.IsActionJustPressed("interect") && touchable) {
 			AnimatedSprite sprite=GetNode<AnimatedSprite>("AnimatedSprite");
+            sprite.Frame=1;
 			sprite.Rotation=0;
 			Vector2 position=this.Position;
 			position.x=0;
-			position.y=14;
+			position.y=-14;
 
 			sprite.Position=position;
 		}

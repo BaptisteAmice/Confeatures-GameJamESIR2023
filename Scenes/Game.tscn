@@ -664,6 +664,7 @@ rotation = -0.0977384
 [node name="Mechant" parent="." instance=ExtResource( 24 )]
 position = Vector2( 50, 16 )
 
+<<<<<<< HEAD
 [node name="Pieces" type="Node" parent="."]
 
 [node name="Piece" parent="Pieces" instance=ExtResource( 9 )]
@@ -695,5 +696,14 @@ position = Vector2( -890, -128 )
 
 [node name="Piece10" parent="Pieces" instance=ExtResource( 9 )]
 position = Vector2( -868, -138 )
+=======
+[node name="Pilier13" parent="." instance=ExtResource( 7 )]
+position = Vector2( -1934, -42 )
+rotation = 0.109956
+
+[node name="Pilier14" parent="." instance=ExtResource( 7 )]
+position = Vector2( -2016, -18 )
+rotation = -0.10821
+>>>>>>> faaedd1e3955f8d68c3ba2113c10fe486c27fd89
 
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
