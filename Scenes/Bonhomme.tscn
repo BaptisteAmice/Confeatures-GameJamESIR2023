@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/mouvementBonhomme.cs" type="Script" id=1]
 [ext_resource path="res://Sprites/deplacement1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/deplacement3.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/deplacement4.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/deplacement2.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/BonhommeSprite.cs" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 7.5 )
@@ -29,4 +28,3 @@ shape = SubResource( 1 )
 [node name="BonhommeSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 frame = 1
-script = ExtResource( 6 )
