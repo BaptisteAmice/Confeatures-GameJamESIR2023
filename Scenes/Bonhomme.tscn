@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/mouvementBonhomme.cs" type="Script" id=1]
 [ext_resource path="res://Sprites/perso_1.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scripts/BonhommeSpriteAttaque.cs" type="Script" id=14]
 [ext_resource path="res://AssetsDivers/joystix monospace.otf" type="DynamicFontData" id=15]
 [ext_resource path="res://Sprites/piece.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/TextPieces.cs" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 8.4 )
@@ -73,29 +74,32 @@ position = Vector2( -4, 0 )
 frames = SubResource( 3 )
 script = ExtResource( 14 )
 
-[node name="Pieces" type="Node" parent="."]
+[node name="Pieces" type="Node2D" parent="."]
+scale = Vector2( 0.3, 0.3 )
 
 [node name="Sprite" type="Sprite" parent="Pieces"]
-position = Vector2( 21, -70 )
+position = Vector2( 34, -44.6667 )
 scale = Vector2( 2.08333, 2.08333 )
 texture = ExtResource( 16 )
 
-[node name="Text" type="RichTextLabel" parent="Pieces"]
-margin_left = -57.0
-margin_top = -86.0
-margin_right = 12.0
-margin_bottom = -45.0
+[node name="ComptePieces" type="RichTextLabel" parent="Pieces"]
+margin_left = -39.3333
+margin_top = -61.3333
+margin_right = 28.6667
+margin_bottom = -28.3333
 custom_fonts/normal_font = SubResource( 4 )
 text = "100"
 fit_content_height = true
 
-[node name="Score" type="Node" parent="."]
+[node name="Score" type="Node2D" parent="."]
+scale = Vector2( 0.3, 0.3 )
 
 [node name="Text" type="RichTextLabel" parent="Score"]
-margin_left = -82.0
-margin_top = -119.0
-margin_right = 66.0
-margin_bottom = -78.0
+margin_left = -61.3333
+margin_top = -118.0
+margin_right = 86.6667
+margin_bottom = -77.0
 custom_fonts/normal_font = SubResource( 4 )
 text = "500 Pts"
 fit_content_height = true
+script = ExtResource( 17 )

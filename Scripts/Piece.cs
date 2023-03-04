@@ -3,11 +3,7 @@ using System;
 
 public class Piece : Area2D
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    bool isCollected = false;
+    private bool isCollected = false;
 
     [Signal]
     public delegate void PieceTouched();

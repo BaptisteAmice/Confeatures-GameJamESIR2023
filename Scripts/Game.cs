@@ -13,7 +13,7 @@ public class Game : Node2D
     private Drapeau checkpoint;
     private mouvementBonhomme bonhomme;
 
-    private int piecesNumber;
+    public int piecesNumber;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -23,27 +23,37 @@ public class Game : Node2D
 
         Drapeaux_setup();
 
-        //piece number equals to number of Piece node
-        piecesNumber = GetNode("Piece").GetChildCount();
+
+        Godot.Collections.Array gameChildren = GetChildren();
+        //count piece note in array
+        foreach (Node child in gameChildren)
+        {
+            if (child is Piece)
+            {
+                piecesNumber++;
+            }
+        }
+        
+        //set piece number in RichTextLabel
+        SetPiecesInPlayer(piecesNumber);
+
+        
         GD.Print(piecesNumber);
 
         //connects signal to method for piece
-        GetNode("Piece").Connect("PieceTouched", this, "PieceTouched");
+        GetNode("Piece").Connect("PieceTouched", this, "PieceCollected");
 
         
     }
 
-    public void PieceTouched()
+    public void PieceCollected()
     {
         //decrease piece number
         piecesNumber--;
-        GD.Print(piecesNumber);
+        //set piece number in RichTextLabel
+        SetPiecesInPlayer(piecesNumber);
 
-        //if no more piece, load next level
-        if (piecesNumber == 0)
-        {
-            GD.Print("Next level");
-        }
+        GD.Print("lol"+piecesNumber);
     }
 
         public void _on_DeadZone_body_entered(object body) {
@@ -94,6 +104,13 @@ public class Game : Node2D
         }
         //hide the drapeau
         drapeau.Hide();
+    }
+
+    public void SetPiecesInPlayer(int number)
+    {
+        //set piece number in RichTextLabel
+                GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces").GetNode<RichTextLabel>("ComptePieces").Text = number.ToString();
+
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -486,9 +486,6 @@ position = Vector2( -1384, -93 )
 [node name="Piece2" parent="." instance=ExtResource( 9 )]
 position = Vector2( -1300, -132 )
 
-[node name="Piece" parent="Piece2" instance=ExtResource( 9 )]
-position = Vector2( 40, 16 )
-
 [node name="TopRightText" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -605,5 +602,8 @@ rotation = 1.27409
 
 [node name="Pilier10" parent="." instance=ExtResource( 2 )]
 position = Vector2( 353, -8 )
+
+[node name="Piece8" parent="." instance=ExtResource( 9 )]
+position = Vector2( -1260, -116 )
 
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
