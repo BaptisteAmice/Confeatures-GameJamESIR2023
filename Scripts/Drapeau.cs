@@ -7,11 +7,16 @@ public class Drapeau : Area2D
 	// private int a = 2;
 	// private string b = "text";
 
+	static public int numDrapeau = 0;
+	public int idDrapeau;
+
     PressKey pressKey;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		numDrapeau++;
+		idDrapeau = numDrapeau;
         pressKey = GetNode<PressKey>("PressKey");
 	}
 
