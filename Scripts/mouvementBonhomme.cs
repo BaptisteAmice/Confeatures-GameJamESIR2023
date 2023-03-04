@@ -5,30 +5,28 @@ public class mouvementBonhomme : KinematicBody2D {
     public Vector2 velocity=new Vector2();
 
     private const int speed=200;
-    private const int gravity=5000;
-    private const int jump=-9000;
+    private const int gravity=3500;
+    private const float jump=-3000;
 
     public void GetInput(float delta) {
         velocity=new Vector2();
         AnimatedSprite sprite=GetNode<AnimatedSprite>("BonhommeSprite");
         Timer timer=GetNode<Timer>("TimerJump");
 
-        if (Input.IsActionPressed("move_right")) {
-            velocity.x+=speed;
+        if (Input.IsActionPressed("move_right") ||Input.IsActionPressed("move_left")) {
+            velocity.x+=speed*((Input.IsActionPressed("move_right") ? 1 : 0) - ((Input.IsActionPressed("move_left") ? 1 : 0)));
         }
 
-        if (Input.IsActionPressed("move_left")) {
-            velocity.x-=speed;
-        }
-
-        if(IsOnFloor() || (timer.TimeLeft>0)) {
-            if (!(timer.TimeLeft>0)) {
-                timer.Start((float)0.35);
+        if (IsOnFloor() && (Input.IsActionPressed("move_up") || timer.TimeLeft>0 )) {
+            GD.Print(timer.TimeLeft);
+            if (timer.TimeLeft==0) {
+                GD.Print("Bouh");
+                timer.Start((float)1);
+                GD.Print("Samaire");
+                velocity.y+=delta*jump;
+            } else {
+                velocity.y+=delta*gravity;
             }
-            if(Input.IsActionPressed("move_up"))
-                velocity.y += delta*jump;
-        } else {
-            velocity.y+= delta*gravity;
         }
     }
 
