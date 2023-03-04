@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixguerchoeurs.mp3-dacc992ab5bd0fa79c22dd73747474ea.mp3str"
+
+[deps]
+
+source_file="res://Audios/mixguerchoeurs.mp3"
+dest_files=[ "res://.import/mixguerchoeurs.mp3-dacc992ab5bd0fa79c22dd73747474ea.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
