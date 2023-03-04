@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bruit_Pilliers.mp3-4eccbe81a358bc75975c51fe41a212f1.mp3str"
+
+[deps]
+
+source_file="res://Audios/Bruit_Pilliers.mp3"
+dest_files=[ "res://.import/Bruit_Pilliers.mp3-4eccbe81a358bc75975c51fe41a212f1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
