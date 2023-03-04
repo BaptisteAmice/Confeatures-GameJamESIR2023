@@ -6,7 +6,8 @@ public class Piece : Area2D
     private bool isCollected = false;
 
     [Signal]
-    public delegate void PieceTouched();
+    public delegate Piece PieceTouched();
+    
 
     AnimatedSprite animatedSprite;
 
@@ -25,8 +26,10 @@ public class Piece : Area2D
             //set to sprite 1
             animatedSprite.Frame = 1;
             //emit signal to parent
-            EmitSignal("PieceTouched");
+            
             isCollected = true;
+
+            //A REVOIR
         }
         
     }

@@ -531,12 +531,6 @@ position = Vector2( -1377, 33 )
 [node name="Pilier9" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1432, -3 )
 
-[node name="Piece" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1384, -93 )
-
-[node name="Piece2" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1300, -132 )
-
 [node name="TopRightText" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -633,21 +627,6 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( -655431, 0, 0, -655430, 0, 0, -655429, 0, 0, -655427, 0, 0, -655426, 0, 0, -655425, 0, 0, -720864, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65541, 0, 0, 65547, 0, 0, 65548, 0, 0, 65552, 0, 0, 65554, 0, 0, 65555, 0, 0, 65557, 0, 0, 65562, 0, 0, 65563, 0, 0, 262137, 0, 0, 262138, 0, 0, 393205, 0, 0, 393206, 0, 0, 524238, 0, 0, 524239, 0, 0, 524240, 0, 0, 524242, 0, 0, 524246, 0, 0, 524248, 0, 0, 524251, 0, 0, 524252, 0, 0, 524257, 0, 0, 524258, 0, 0, 524263, 0, 0, 524265, 0, 0, 524267, 0, 0, 524268, 0, 0, 524271, 0, 0, 524273, 0, 0 )
 
-[node name="Piece3" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1424, -125 )
-
-[node name="Piece4" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1275, -138 )
-
-[node name="Piece5" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1395, -123 )
-
-[node name="Piece6" parent="." instance=ExtResource( 9 )]
-position = Vector2( -299, 43 )
-
-[node name="Piece7" parent="." instance=ExtResource( 9 )]
-position = Vector2( -328, 42 )
-
 [node name="PilierMoussu" parent="." instance=ExtResource( 19 )]
 position = Vector2( 329, 15 )
 rotation = 1.27409
@@ -674,15 +653,6 @@ position = Vector2( -103, 27 )
 rotation = -0.328122
 z_index = -3
 
-[node name="Piece8" parent="." instance=ExtResource( 9 )]
-position = Vector2( -908, -111 )
-
-[node name="Piece9" parent="." instance=ExtResource( 9 )]
-position = Vector2( -890, -128 )
-
-[node name="Piece10" parent="." instance=ExtResource( 9 )]
-position = Vector2( -868, -138 )
-
 [node name="Pilier12" parent="." instance=ExtResource( 4 )]
 position = Vector2( -937, 26 )
 rotation = -0.188496
@@ -693,5 +663,37 @@ rotation = -0.0977384
 
 [node name="Mechant" parent="." instance=ExtResource( 24 )]
 position = Vector2( 50, 16 )
+
+[node name="Pieces" type="Node" parent="."]
+
+[node name="Piece" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -1384, -93 )
+
+[node name="Piece2" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -1300, -132 )
+
+[node name="Piece3" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -1424, -125 )
+
+[node name="Piece4" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -1275, -138 )
+
+[node name="Piece5" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -1395, -123 )
+
+[node name="Piece6" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -299, 43 )
+
+[node name="Piece7" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -328, 42 )
+
+[node name="Piece8" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -908, -111 )
+
+[node name="Piece9" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -890, -128 )
+
+[node name="Piece10" parent="Pieces" instance=ExtResource( 9 )]
+position = Vector2( -868, -138 )
 
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
