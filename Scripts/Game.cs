@@ -13,7 +13,9 @@ public class Game : Node2D
     private Drapeau checkpoint;
     private mouvementBonhomme bonhomme;
 
-    private int piecesNumber;
+    private int toucherPoto=false;
+
+    public int piecesNumber;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -23,27 +25,41 @@ public class Game : Node2D
 
         Drapeaux_setup();
 
-        //piece number equals to number of Piece node
-        piecesNumber = GetNode("Piece").GetChildCount();
+        //get Node Pieces
+        Node pieces = GetNode("Pieces");
+        
+        Godot.Collections.Array pieceNodes = pieces.GetChildren();
+
+        //count piece note in array
+        foreach (Node child in pieceNodes)
+        {
+            if (child is Piece)
+            {
+                piecesNumber++;
+            }
+        }
+
+
+        //set piece number in RichTextLabel
+        SetPiecesInPlayer(piecesNumber);
+
+        
         GD.Print(piecesNumber);
 
         //connects signal to method for piece
-        GetNode("Piece").Connect("PieceTouched", this, "PieceTouched");
+       // GetNode("Piece").Connect("PieceTouched", this, "PieceCollected");
 
         
     }
 
-    public void PieceTouched()
+    public void PieceCollected()
     {
         //decrease piece number
         piecesNumber--;
-        GD.Print(piecesNumber);
+        //set piece number in RichTextLabel
+        SetPiecesInPlayer(piecesNumber);
 
-        //if no more piece, load next level
-        if (piecesNumber == 0)
-        {
-            GD.Print("Next level");
-        }
+        GD.Print("lol"+piecesNumber);
     }
 
         public void _on_DeadZone_body_entered(object body) {
@@ -96,9 +112,30 @@ public class Game : Node2D
         drapeau.Hide();
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    public void SetPiecesInPlayer(int number)
+    {
+<<<<<<< HEAD
+                GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces").GetNode<RichTextLabel>("ComptePieces").Text = number.ToString();
+    }
+
+    void potoToucher () {
+        toucherPoto=true;
+    }
+
+    void potoPasToucher() {
+        toucherPoto=false;
+    }
+
+    if (Input.IsActionJustPressed("interect") && toucherPoto) {
+        AnimatedSprite sprite1=GetNode<AnimatedSprite>("Pillier13");
+        AnimatedSprite sprite2=GetNode<AnimatedSprite>("Pillier14");
+=======
+        //set piece number in RichTextLabel
+        GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces").GetNode<RichTextLabel>("ComptePieces").Text = number.ToString();
+>>>>>>> 6a5f05856c8a49b2118598f7f449870a19782d94
+
+        sprite1.Rotation=0.10472f;
+        sprite2.Rotation=-0.10472f;
+    }
+
 }
