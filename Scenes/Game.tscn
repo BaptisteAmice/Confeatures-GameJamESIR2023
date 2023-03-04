@@ -406,7 +406,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, 13 )
 
 [node name="Pilier2" type="Sprite" parent="."]
-position = Vector2( 342, 212 )
+position = Vector2( 321, 221 )
 rotation = 1.5708
 texture = ExtResource( 2 )
 
