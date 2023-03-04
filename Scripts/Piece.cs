@@ -7,6 +7,11 @@ public class Piece : Area2D
     // private int a = 2;
     // private string b = "text";
 
+    bool isCollected = false;
+
+    [Signal]
+    public delegate void PieceTouched();
+
     AnimatedSprite animatedSprite;
 
     // Called when the node enters the scene tree for the first time.
@@ -19,12 +24,15 @@ public class Piece : Area2D
 
     public void _on_Piece_body_entered(object body)
     {
-        if (body is mouvementBonhomme)
+        if (body is mouvementBonhomme && !isCollected)
         {
             //set to sprite 1
             animatedSprite.Frame = 1;
-            GD.Print("Piece touché");
+            //emit signal to parent
+            EmitSignal("PieceTouched");
+            isCollected = true;
         }
+        
     }
 
     public void _on_Piece_body_exited(object body)
