@@ -2,52 +2,33 @@ using Godot;
 using System;
 
 public class mouvementBonhomme : KinematicBody2D {
-    [Export] public int speed = 200;
-
     public Vector2 velocity=new Vector2();
-    public int sens;
-    public int gravity=5000;
-    
 
-    public void GetInput() {
+    private const int speed=200;
+    private const int gravity=3000;
+    private const int jump=-10000;
+
+    public void GetInput(float delta) {
         velocity = new Vector2();
         AnimatedSprite sprite = GetNode<AnimatedSprite>("BonhommeSprite");
 
         if (Input.IsActionPressed("move_right")) {
-            velocity.x += 1;
-            sprite.FlipH=false;
+            velocity.x += speed;
         }
 
         if (Input.IsActionPressed("move_left")) {
-            velocity.x -= 1;
-            sprite.FlipH=true;
+            velocity.x -= speed;
         }
 
-        /*if (Input.IsActionPressed("move_down")) {
-            velocity.y += 1;
-        }*/
-
-        if (Input.IsActionPressed("move_up")) {
-            velocity.y -= 1;
-        }
-
-        velocity = velocity.Normalized() * speed;
-    }
-
-    public void SetSprite() {
-        AnimatedSprite sprite = GetNode<AnimatedSprite>("BonhommeSprite");
-
-        if (Input.IsActionPressed("move_right") || Input.IsActionPressed("move_left")) {
-            sprite.Playing=true;
-        } else {
-            sprite.Playing=false;
+        if(IsOnFloor()) {
+            if(Input.IsActionPressed("move_up"))
+                velocity.y += jump;
         }
     }
 
     public override void _PhysicsProcess(float delta) {
-        GetInput();
-        SetSprite();
+        GetInput(delta);
         velocity.y+= delta*gravity;
-        velocity = MoveAndSlide(velocity);
+        velocity = MoveAndSlide(velocity, new Vector2(0,-1));
     }
 }
