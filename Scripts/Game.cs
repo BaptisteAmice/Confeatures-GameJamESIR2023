@@ -10,14 +10,16 @@ public class Game : Node2D
 
     //get drapeau nodes
     private Godot.Collections.Array drapeauNodes;
-
-
+    private Drapeau checkpoint;
+    private mouvementBonhomme bonhomme;
 
     private int piecesNumber;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        //get Bonhomme node
+        bonhomme = GetNode<mouvementBonhomme>("Bonhomme");
 
         Drapeaux_setup();
 
@@ -45,6 +47,8 @@ public class Game : Node2D
         public void _on_DeadZone_body_entered(object body) {
         if (body is mouvementBonhomme) {
             GD.Print("DeadZone touché");
+            //teleport Bonhomme to checkpoint position
+            teleportToCheckpoint();
         }
     }
 
@@ -58,9 +62,17 @@ public class Game : Node2D
         }
 
         //get first drapeau
-        Node firstDrapeau = drapeauNodes[0] as Node;
-        //set its frame to 1
-        //firstDrapeau.GetNode<Sprite>("Sprite").Frame = 1;
+        checkpoint = (Drapeau)drapeauNodes[0];
+
+    }
+
+    public void teleportToCheckpoint() {
+        //get checkpoint position
+        Vector2 checkpointPosition = checkpoint.Position;
+        //y-10 to avoid teleporting in the ground
+        checkpointPosition.y -= 10;
+        //teleport Bonhomme to checkpoint position
+        bonhomme.Position = checkpointPosition;
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
