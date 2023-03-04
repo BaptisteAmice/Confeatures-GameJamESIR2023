@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Marche_caillou.mp3-e461043d4a55c42307951188558299f9.mp3str"
+
+[deps]
+
+source_file="res://Audios/Marche_caillou.mp3"
+dest_files=[ "res://.import/Marche_caillou.mp3-e461043d4a55c42307951188558299f9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
