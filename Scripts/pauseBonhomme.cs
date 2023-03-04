@@ -19,10 +19,6 @@ public class pauseBonhomme : Sprite {
 
         if (Input.IsActionPressed("attack")) {
             this.Visible=false;
-        } else {
-            this.Visible=true;
         }
     }
-
-
 }
