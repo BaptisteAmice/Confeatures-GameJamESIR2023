@@ -44,6 +44,8 @@ scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="BonhommeSpriteMarche" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 1.8, 0 )
 frames = SubResource( 2 )
 speed_scale = 2.0
 script = ExtResource( 6 )
@@ -57,12 +59,12 @@ current = true
 zoom = Vector2( 0.6, 0.6 )
 
 [node name="BonhommeSpritePause" type="Sprite" parent="."]
-position = Vector2( -4, -1.49012e-08 )
+position = Vector2( -2.2, -5.96046e-08 )
 texture = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="BonhommeSpriteAttack" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( -4, 0 )
+position = Vector2( -2.2, 0 )
 frames = SubResource( 3 )
 script = ExtResource( 14 )

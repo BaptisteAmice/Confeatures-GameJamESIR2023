@@ -10,5 +10,13 @@ public class BonhommeSpriteAttaque : AnimatedSprite {
             this.Playing=false;
             this.Visible=false;
         }
+
+        if (Input.IsActionPressed("move_right")) {
+            this.FlipH=true;
+        }
+
+        if (Input.IsActionPressed("move_left")) {
+            this.FlipH=false;
+        }
     }
 }
