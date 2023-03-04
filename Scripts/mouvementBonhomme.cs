@@ -6,6 +6,7 @@ public class mouvementBonhomme : KinematicBody2D {
 
     public Vector2 velocity=new Vector2();
     public int sens;
+    public int gravity=5000;
     
 
     public void GetInput() {
@@ -22,9 +23,9 @@ public class mouvementBonhomme : KinematicBody2D {
             sprite.FlipH=true;
         }
 
-        if (Input.IsActionPressed("move_down")) {
+        /*if (Input.IsActionPressed("move_down")) {
             velocity.y += 1;
-        }
+        }*/
 
         if (Input.IsActionPressed("move_up")) {
             velocity.y -= 1;
@@ -46,6 +47,7 @@ public class mouvementBonhomme : KinematicBody2D {
     public override void _PhysicsProcess(float delta) {
         GetInput();
         SetSprite();
+        velocity.y+= delta*gravity;
         velocity = MoveAndSlide(velocity);
     }
 }
