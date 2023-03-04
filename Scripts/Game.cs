@@ -63,6 +63,8 @@ public class Game : Node2D
 
         //get first drapeau
         checkpoint = (Drapeau)drapeauNodes[0];
+        //cget its animated sprite and set it to 0
+        checkpoint.GetNode<AnimatedSprite>("AnimatedSprite").Frame = 0;
 
     }
 

@@ -522,12 +522,12 @@ shape = SubResource( 9 )
 
 [node name="Drapeaux" type="Node" parent="."]
 
-[node name="Drapeau2" parent="Drapeaux" instance=ExtResource( 5 )]
-position = Vector2( -484, 64 )
-
 [node name="Drapeau" parent="Drapeaux" instance=ExtResource( 5 )]
 position = Vector2( 164, 16 )
 z_index = -1
+
+[node name="Drapeau2" parent="Drapeaux" instance=ExtResource( 5 )]
+position = Vector2( -484, 64 )
 
 [node name="Fond" type="ParallaxBackground" parent="."]
 
