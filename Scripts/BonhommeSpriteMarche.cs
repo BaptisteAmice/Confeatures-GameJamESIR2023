@@ -2,7 +2,6 @@ using Godot;
 using System;
 
 public class BonhommeSpriteMarche : AnimatedSprite {
-    public int mort=0;
 
     public void SetAnimation() {
         Vector2 position=this.Position;
@@ -31,10 +30,6 @@ public class BonhommeSpriteMarche : AnimatedSprite {
     }
 
     public override void _PhysicsProcess(float delta) {
-        /*if (Input.IsActionPressed("suicide")) {Death();} 
-        else if (mort==1) {
-            Revivre();
-        }*/
         SetAnimation();
     }
 }
