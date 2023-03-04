@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Sprites/terrain_herbe.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Obstacles/Pilier.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Sprites/collines.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/touffe_dherbe.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/noir.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Visuels/PilierMoussuFond.tscn" type="PackedScene" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -477,13 +478,13 @@ position = Vector2( -1377, 33 )
 position = Vector2( -1432, -3 )
 
 [node name="Piece" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1104, -102 )
+position = Vector2( -1384, -93 )
 
 [node name="Piece2" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1138, -104 )
+position = Vector2( -1300, -132 )
 
 [node name="Piece" parent="Piece2" instance=ExtResource( 9 )]
-position = Vector2( 63, -2 )
+position = Vector2( 40, 16 )
 
 [node name="TopRightText" type="Control" parent="."]
 margin_right = 40.0
@@ -578,12 +579,28 @@ material = SubResource( 20 )
 tile_set = SubResource( 18 )
 cell_size = Vector2( 16, 8 )
 format = 1
-tile_data = PoolIntArray( 524265, 0, 0, 524266, 0, 0, 524267, 0, 0, 524268, 0, 0, 589807, 0, 0, 589808, 0, 0, 589809, 0, 0 )
+tile_data = PoolIntArray( 65536, 0, 0, 65537, 0, 0, 393205, 0, 0, 393206, 0, 0, 524265, 0, 0, 524266, 0, 0, 524267, 0, 0, 524268, 0, 0, 524273, 0, 0, 589807, 0, 0, 589808, 0, 0, 589809, 0, 0 )
 
 [node name="Piece3" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1429, -148 )
+position = Vector2( -1424, -125 )
 
 [node name="Piece4" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1315, -138 )
+position = Vector2( -1275, -138 )
+
+[node name="Piece5" parent="." instance=ExtResource( 9 )]
+position = Vector2( -1395, -123 )
+
+[node name="Piece6" parent="." instance=ExtResource( 9 )]
+position = Vector2( -299, 43 )
+
+[node name="Piece7" parent="." instance=ExtResource( 9 )]
+position = Vector2( -328, 42 )
+
+[node name="PilierMoussu" parent="." instance=ExtResource( 19 )]
+position = Vector2( 329, 15 )
+rotation = 1.27409
+
+[node name="Pilier10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 353, -9 )
 
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
