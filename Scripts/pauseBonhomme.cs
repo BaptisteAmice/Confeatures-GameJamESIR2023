@@ -16,6 +16,12 @@ public class pauseBonhomme : Sprite {
         if (Input.IsActionPressed("move_left")) {
             this.FlipH=false;
         }
+
+        if (Input.IsActionPressed("attack")) {
+            this.Visible=false;
+        } else {
+            this.Visible=true;
+        }
     }
 
 
