@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/deplacement2.png-82f00c6104d53f65c60cb346cd4d7b98.stex"
+path="res://.import/perso_2.png-ddf59315cf877f287db365fcd87f3e56.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/deplacement2.png"
-dest_files=[ "res://.import/deplacement2.png-82f00c6104d53f65c60cb346cd4d7b98.stex" ]
+source_file="res://Sprites/perso_2.png"
+dest_files=[ "res://.import/perso_2.png-ddf59315cf877f287db365fcd87f3e56.stex" ]
 
 [params]
 

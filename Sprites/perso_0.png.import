@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player.png-b12d81cacd41edd115dbd315254b5ad9.stex"
+path="res://.import/perso_0.png-c37054a9f477d0a7688f1e2c38219095.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player.png"
-dest_files=[ "res://.import/player.png-b12d81cacd41edd115dbd315254b5ad9.stex" ]
+source_file="res://Sprites/perso_0.png"
+dest_files=[ "res://.import/perso_0.png-c37054a9f477d0a7688f1e2c38219095.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
