@@ -5,8 +5,10 @@ public class mouvementBonhomme : KinematicBody2D {
     public Vector2 velocity=new Vector2();
 
     private const int speed=200;
-    private const int gravity=3500;
-    private const float jump=-3000;
+    private const int gravity=8000;
+    private const float jump=-20000;
+
+    private const float timerDelay=0.15f;
 
     public void GetInput(float delta) {
         velocity=new Vector2();
@@ -17,16 +19,13 @@ public class mouvementBonhomme : KinematicBody2D {
             velocity.x+=speed*((Input.IsActionPressed("move_right") ? 1 : 0) - ((Input.IsActionPressed("move_left") ? 1 : 0)));
         }
 
-        if (IsOnFloor() && (Input.IsActionPressed("move_up") || timer.TimeLeft>0 )) {
-            GD.Print(timer.TimeLeft);
-            if (timer.TimeLeft==0) {
-                GD.Print("Bouh");
-                timer.Start((float)1);
-                GD.Print("Samaire");
-                velocity.y+=delta*jump;
-            } else {
+        if ( IsOnFloor() && Input.IsActionPressed("move_up")) {
+            timer.Start(timerDelay);
+        }
+        if (timer.TimeLeft>0) {
+             velocity.y+=delta*jump*(1-(timerDelay/(float)(timer.TimeLeft)));
+        } else {
                 velocity.y+=delta*gravity;
-            }
         }
     }
 

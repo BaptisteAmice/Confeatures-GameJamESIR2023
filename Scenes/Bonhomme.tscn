@@ -30,6 +30,7 @@ shape = SubResource( 1 )
 [node name="BonhommeSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 frame = 1
+speed_scale = 1.2
 script = ExtResource( 6 )
 
 [node name="TimerJump" type="Timer" parent="."]
