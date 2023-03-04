@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/pilierMoussu.png" type="Texture" id=1]
+
+[node name="PilierFondMoussu" type="Sprite"]
+modulate = Color( 0.6, 0.533333, 0.533333, 1 )
+scale = Vector2( 0.95, 0.95 )
+z_index = -1
+texture = ExtResource( 1 )
