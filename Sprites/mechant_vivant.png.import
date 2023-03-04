@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rocher_qui_tombe.png-89c063566af945b87dfadff1c5d0db1f.stex"
+path="res://.import/mechant_vivant.png-8f11f81d683c1e7d22304b77a6928ba4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/rocher_qui_tombe.png"
-dest_files=[ "res://.import/rocher_qui_tombe.png-89c063566af945b87dfadff1c5d0db1f.stex" ]
+source_file="res://Sprites/mechant_vivant.png"
+dest_files=[ "res://.import/mechant_vivant.png-8f11f81d683c1e7d22304b77a6928ba4.stex" ]
 
 [params]
 
@@ -20,11 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-<<<<<<< HEAD
 flags/filter=false
-=======
-flags/filter=true
->>>>>>> c4e726afe825430c95f42401790515a9fdb98b87
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
