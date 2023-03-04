@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kjeHHi2nvna75GOK3n14FS8UmGierk+JIMZY/vKSRBInsTki/gecAE/RCvU4NWEL91zWcvqG3lTlmVQXUsbW+g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\GameJamEsir\\git\\Confeatures.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

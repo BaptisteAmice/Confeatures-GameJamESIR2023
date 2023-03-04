@@ -1,0 +1,9 @@
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\bin\Debug\Confeatures.dll
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\bin\Debug\Confeatures.pdb
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\obj\Debug\Confeatures.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\obj\Debug\Confeatures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\obj\Debug\Confeatures.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\obj\Debug\Confeatures.AssemblyInfo.cs
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\obj\Debug\Confeatures.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\obj\Debug\Confeatures.dll
+C:\Users\PC\Desktop\GameJamEsir\git\.mono\temp\obj\Debug\Confeatures.pdb
