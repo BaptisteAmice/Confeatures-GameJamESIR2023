@@ -8,6 +8,9 @@ public class Game : Node2D
     // private int a = 2;
     // private string b = "text";
 
+    //get drapeau nodes
+    private Godot.Collections.Array drapeauNodes;
+
 
 
     private int piecesNumber;
@@ -16,9 +19,7 @@ public class Game : Node2D
     public override void _Ready()
     {
 
-
-        
-
+        Drapeaux_setup();
 
         //piece number equals to number of Piece node
         piecesNumber = GetNode("Piece").GetChildCount();
@@ -45,6 +46,21 @@ public class Game : Node2D
         if (body is mouvementBonhomme) {
             GD.Print("DeadZone touché");
         }
+    }
+
+    public void Drapeaux_setup() {
+        //get drapeau nodes
+        drapeauNodes = GetNode("Drapeaux").GetChildren();
+        //sho all drapeau names
+        foreach (Node drapeau in drapeauNodes)
+        {
+            GD.Print(drapeau.Name);
+        }
+
+        //get first drapeau
+        Node firstDrapeau = drapeauNodes[0] as Node;
+        //set its frame to 1
+        //firstDrapeau.GetNode<Sprite>("Sprite").Frame = 1;
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
