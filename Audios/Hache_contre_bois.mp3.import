@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hache_contre_bois.mp3-138d03d876e1b553f9109fd9e149424e.mp3str"
+
+[deps]
+
+source_file="res://Audios/Hache_contre_bois.mp3"
+dest_files=[ "res://.import/Hache_contre_bois.mp3-138d03d876e1b553f9109fd9e149424e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

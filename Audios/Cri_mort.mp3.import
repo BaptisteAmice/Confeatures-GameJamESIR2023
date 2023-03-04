@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cri_mort.mp3-008fa3d20044445ee1c42d16ac13b1e5.mp3str"
+
+[deps]
+
+source_file="res://Audios/Cri_mort.mp3"
+dest_files=[ "res://.import/Cri_mort.mp3-008fa3d20044445ee1c42d16ac13b1e5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
