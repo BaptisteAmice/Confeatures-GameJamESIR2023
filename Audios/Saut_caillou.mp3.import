@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Saut_caillou.mp3-b83285992797ceb027ee2e094b95ac58.mp3str"
+
+[deps]
+
+source_file="res://Audios/Saut_caillou.mp3"
+dest_files=[ "res://.import/Saut_caillou.mp3-b83285992797ceb027ee2e094b95ac58.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/terrain_herbe.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/pilier.png" type="Texture" id=2]
+[ext_resource path="res://Obstacles/Pilier.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Bonhomme.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
@@ -400,16 +400,9 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 917503, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 917504, 1, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 917513, 1, 0, 917514, 1, 0, 917515, 1, 0, 917516, 1, 0, 917517, 1, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 1, 0, 917535, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 1, 0, 983071, 1, 0, 983072, 1, 0, 983073, 1, 0 )
 
-[node name="Pilier" type="Sprite" parent="."]
-position = Vector2( 196, 194 )
-texture = ExtResource( 2 )
-offset = Vector2( 0, 13 )
-
-[node name="Pilier2" type="Sprite" parent="."]
-position = Vector2( 342, 212 )
-rotation = 1.5708
-texture = ExtResource( 2 )
-
 [node name="Bonhomme" parent="." instance=ExtResource( 3 )]
 position = Vector2( 228, 208 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="Pilier" parent="." instance=ExtResource( 2 )]
+position = Vector2( 178, 201 )

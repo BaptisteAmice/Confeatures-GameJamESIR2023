@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mort_métallique.mp3-96b88494e3a708fe1693939ed7ae79de.mp3str"
+
+[deps]
+
+source_file="res://Audios/Mort_métallique.mp3"
+dest_files=[ "res://.import/Mort_métallique.mp3-96b88494e3a708fe1693939ed7ae79de.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

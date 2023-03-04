@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Chèvre_bêlement.mp3-e49ade1e5fafa6d92f868f6f85f2fc4f.mp3str"
+
+[deps]
+
+source_file="res://Audios/Chèvre_bêlement.mp3"
+dest_files=[ "res://.import/Chèvre_bêlement.mp3-e49ade1e5fafa6d92f868f6f85f2fc4f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
