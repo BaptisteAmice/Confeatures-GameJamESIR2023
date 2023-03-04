@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Sprites/terrain_herbe.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Obstacles/Pilier.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Sprites/ciel_fonce.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/montagnes.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/collines.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/touffe_dherbe.png" type="Texture" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -339,6 +340,68 @@ extents = Vector2( 277.063, 18 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 13.25, 172.5 )
 
+[sub_resource type="Shader" id=19]
+code = "shader_type canvas_item;
+
+uniform float x_intensity = 10.0;
+uniform float y_intensity = 1;
+uniform float offset = 0.0;
+uniform float speed : hint_range(0, 20) = 2.0;
+uniform float wave_frequency : hint_range(0, 100) = 20;
+uniform float wave_length : hint_range(50, 800) = 200.0;
+
+void fragment() {
+    vec2 real_uv = vec2(UV.x, UV.y);
+    
+    vec2 vecToBottom = vec2(1, 1) - UV.y; 
+    float distToBottom = length(vecToBottom);
+    
+    float final_speed = TIME * (speed / 4.0) + offset;
+    
+    float time_var = (cos(final_speed) * cos(final_speed * 4.0) * cos(final_speed * 2.0))/(200.0);
+    float time_var2 = (cos(final_speed) * cos(final_speed * 6.0) * cos(final_speed * 2.0))/(200.0);
+    
+    float wave_from_x = (cos(real_uv.x * 100.0)/1000.0);
+    float wave_large_from_x = cos(TIME + (real_uv.x * wave_frequency))/wave_length;
+    
+    float wave_from_y = (cos(real_uv.y * 99000.0)/90000.0);
+    
+    float new_x = real_uv.x + time_var * (distToBottom * x_intensity) + wave_from_x + (wave_large_from_x);
+    float new_y = real_uv.y + time_var2 * (distToBottom * y_intensity);
+    
+    vec2 new_uv1 = vec2(new_x, new_y);
+    vec4 new_texture = texture(TEXTURE, new_uv1);
+    
+    if(new_texture.rgb != vec3(1,1,1)){
+        COLOR.rgba = new_texture.rgba;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=20]
+shader = SubResource( 19 )
+shader_param/x_intensity = 10.0
+shader_param/y_intensity = 1.0
+shader_param/offset = 0.0
+shader_param/speed = 2.0
+shader_param/wave_frequency = 20.0
+shader_param/wave_length = 200.0
+
+[sub_resource type="TileSet" id=18]
+0/name = "touffe_dherbe.png 0"
+0/texture = ExtResource( 17 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 8 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 10 )
 
@@ -477,5 +540,12 @@ position = Vector2( 1, 89 )
 texture = ExtResource( 16 )
 centered = false
 offset = Vector2( 0, -250 )
+
+[node name="Herbe" type="TileMap" parent="."]
+material = SubResource( 20 )
+tile_set = SubResource( 18 )
+cell_size = Vector2( 16, 8 )
+format = 1
+tile_data = PoolIntArray( 524265, 0, 0, 524266, 0, 0, 524267, 0, 0, 524268, 0, 0, 589807, 0, 0, 589808, 0, 0, 589809, 0, 0 )
 
 [connection signal="body_entered" from="DeadZone" to="." method="_on_DeadZone_body_entered"]
