@@ -1,1 +1,7 @@
 .mono
+.import
+Confeatures.csproj
+Confeatures.sln
+default_env.tres
+icon.png.import
+project.godot
