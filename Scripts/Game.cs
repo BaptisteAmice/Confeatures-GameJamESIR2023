@@ -13,6 +13,8 @@ public class Game : Node2D
     private Drapeau checkpoint;
     private mouvementBonhomme bonhomme;
 
+    private int toucherPoto=false;
+
     public int piecesNumber;
 
     // Called when the node enters the scene tree for the first time.
@@ -108,14 +110,23 @@ public class Game : Node2D
 
     public void SetPiecesInPlayer(int number)
     {
-        //set piece number in RichTextLabel
                 GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces").GetNode<RichTextLabel>("ComptePieces").Text = number.ToString();
-
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    void potoToucher () {
+        toucherPoto=true;
+    }
+
+    void potoPasToucher() {
+        toucherPoto=false;
+    }
+
+    if (Input.IsActionJustPressed("interect") && toucherPoto) {
+        AnimatedSprite sprite1=GetNode<AnimatedSprite>("Pillier13");
+        AnimatedSprite sprite2=GetNode<AnimatedSprite>("Pillier14");
+
+        sprite1.Rotation=0.10472f;
+        sprite2.Rotation=-0.10472f;
+    }
+
 }
