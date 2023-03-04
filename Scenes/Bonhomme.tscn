@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/mouvementBonhomme.cs" type="Script" id=1]
 [ext_resource path="res://Sprites/perso_1.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Sprites/perso_3.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/perso_6.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/perso_2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/perso_pause.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/pauseBonhomme.cs" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 7.9 )
@@ -29,9 +31,9 @@ script = ExtResource( 1 )
 position = Vector2( -1, 4.1 )
 shape = SubResource( 1 )
 
-[node name="BonhommeSprite" type="AnimatedSprite" parent="."]
+[node name="BonhommeSpriteMarche" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-speed_scale = 1.2
+speed_scale = 2.0
 script = ExtResource( 6 )
 
 [node name="TimerJump" type="Timer" parent="."]
@@ -41,3 +43,7 @@ one_shot = true
 offset = Vector2( -60, 0 )
 current = true
 zoom = Vector2( 0.6, 0.6 )
+
+[node name="BonhommeSpritePause" type="Sprite" parent="."]
+texture = ExtResource( 10 )
+script = ExtResource( 11 )
