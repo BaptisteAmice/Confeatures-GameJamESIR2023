@@ -3,9 +3,25 @@ using System;
 
 public class Mechant : Area2D {
 	private bool touchable=false;
+	private bool reverse=false;
+	mouvementBonhomme bonhomme;
+	private static int numMechant = 0;
+	public int idMechant;
+
+	[Signal]
+    public delegate Mechant DiminueScore(String mechant);
+
+	public override void _Ready() {
+		numMechant++;
+		idMechant = numMechant;
+    	bonhomme = GetNode<mouvementBonhomme>("../../Bonhomme");
+	}
 
 	void toucheMechant (object body) {
 		touchable=true;
+
+		Game game = GetNode<Game>("/root/Game");
+		game.ilfautsauver=true;
 	}
 
 	void pasToucheMechant (object body) {
@@ -13,7 +29,10 @@ public class Mechant : Area2D {
 	}
 
 	public override void _PhysicsProcess(float delta) {
-		if (Input.IsActionJustPressed("interect") && touchable) {
+		//get node game
+		Game game = GetNode<Game>("/root/Game");
+		String idDernierMechant = game.dernierMechantSauve;
+		if (touchable && bonhomme.isReverse && game.ilfautsauver) {
 			AnimatedSprite sprite=GetNode<AnimatedSprite>("AnimatedSprite");
             sprite.Frame=1;
 			sprite.Rotation=0;
@@ -22,6 +41,10 @@ public class Mechant : Area2D {
 			position.y=-14;
 
 			sprite.Position=position;
+
+			EmitSignal(nameof(DiminueScore), this.idMechant.ToString());
+			touchable=false;
+			
 		}
 	}
 		

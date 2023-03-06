@@ -37,6 +37,7 @@ public class Drapeau : Area2D {
 			pressKey.CacheScene();
 			GD.Print("Drapeau quitté");
 		}
+		breakable = false;
 	}
 
 	public void TryBreak()

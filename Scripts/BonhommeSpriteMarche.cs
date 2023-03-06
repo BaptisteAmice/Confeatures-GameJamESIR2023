@@ -12,7 +12,7 @@ public class BonhommeSpriteMarche : AnimatedSprite {
             this.Visible=false;
         }
 
-        if (Input.IsActionPressed("move_right")) {
+        /*if (Input.IsActionPressed("move_right")) {
             this.FlipH=true;
             position.x=-6;
             this.Position=position;
@@ -22,7 +22,7 @@ public class BonhommeSpriteMarche : AnimatedSprite {
             this.FlipH=false;
             position.x=0;
             this.Position=position;
-        }   
+        }   */
 
         if (Input.IsActionPressed("attack")) {
             this.Visible=false;

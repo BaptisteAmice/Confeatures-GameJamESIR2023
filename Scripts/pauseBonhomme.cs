@@ -28,13 +28,13 @@ public class pauseBonhomme : Sprite {
             this.Visible=true;
         }
 
-         if (Input.IsActionPressed("move_right")) {
+        /*if (Input.IsActionPressed("move_right")) {
             this.FlipH=true;
         }
 
         if (Input.IsActionPressed("move_left")) {
             this.FlipH=false;
-        }
+        }*/
 
         if (Input.IsActionPressed("attack")) {
             this.Visible=false;

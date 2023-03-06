@@ -15,6 +15,13 @@ public class Game : Node2D
 
     public int piecesNumber;
 
+    private bool potouche=false;
+
+    private int score=0;
+    private int scorePerEnemy = 50;
+    public String dernierMechantSauve = "-1";
+    public bool ilfautsauver = false;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -23,15 +30,15 @@ public class Game : Node2D
 
         Drapeaux_setup();
 
-
-        Godot.Collections.Array gameChildren = GetChildren();
+        
+        Node pieces = GetNode("Pieces");
+        Godot.Collections.Array piecesNodes = pieces.GetChildren();
         //count piece note in array
-        foreach (Node child in gameChildren)
+        foreach (Node child in piecesNodes)
         {
-            if (child is Piece)
-            {
-                piecesNumber++;
-            }
+ 
+            piecesNumber++;
+            
         }
         
         //set piece number in RichTextLabel
@@ -41,8 +48,34 @@ public class Game : Node2D
         GD.Print(piecesNumber);
 
         //connects signal to method for piece
-        GetNode("Piece").Connect("PieceTouched", this, "PieceCollected");
+        //GetNode("Piece").Connect("PieceTouched", this, "PieceCollected");
 
+        //get piecesVisuals node
+        Node2D piecesVisuals = GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces");
+
+        //hide it
+        piecesVisuals.Visible = false;
+
+        Node mechants = GetNode("Mechants");
+        Godot.Collections.Array mechantsNodes = mechants.GetChildren();
+        //count piece note in array
+        foreach (Node child in mechantsNodes)
+        {
+            //connects signal to method for piece
+            child.Connect("DiminueScore", this, "DiminueScore");
+            score = score + scorePerEnemy;
+        }
+
+
+        //get piecesVisuals node
+        Node2D mechantsVisuels = GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Score");
+
+        //show it
+        mechantsVisuels.Visible = false;
+
+        //set score number in RichTextLabel
+        RichTextLabel mechantsLabel = mechantsVisuels.GetNode<RichTextLabel>("Text");
+        mechantsLabel.Text = score.ToString() + "PTS";
         
     }
 
@@ -89,6 +122,9 @@ public class Game : Node2D
         checkpointPosition.y -= 10;
         //teleport Bonhomme to checkpoint position
         bonhomme.Position = checkpointPosition;
+        AudioStreamPlayer2D mortAudio= GetNode<Node>("Audios").GetNode<AudioStreamPlayer2D>("Mort");
+        //play it one time
+        mortAudio.Play();
     }
 
     public void BriseDrapeau(Drapeau drapeau) {
@@ -104,14 +140,83 @@ public class Game : Node2D
         }
         //hide the drapeau
         drapeau.Hide();
+        //get audio node
+        AudioStreamPlayer2D drapeauAudio = GetNode<Node>("Audios").GetNode<AudioStreamPlayer2D>("Drapeau");
+        //play it one time
+        drapeauAudio.Play();
     }
 
     public void SetPiecesInPlayer(int number)
     {
-        //set piece number in RichTextLabel
-                GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces").GetNode<RichTextLabel>("ComptePieces").Text = number.ToString();
+        //get piecesVisuals node
+        Node2D piecesVisuals = GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Pieces");
 
+        //show it
+        piecesVisuals.Visible = true;
+        //hide it after 2 seconds
+        GetTree().CreateTimer(2).Connect("timeout", piecesVisuals, "HideIt");
+
+        //set piece number in RichTextLabel
+        RichTextLabel piecesLabel = piecesVisuals.GetNode<RichTextLabel>("ComptePieces");
+        piecesLabel.Text = number.ToString();
+        
     }
+
+    void toucherPoto (object body) {
+        if(body is mouvementBonhomme)
+        {
+            potouche=true;
+            GD.Print("oui");
+
+        }
+    }
+
+    void pasToucherPoto (object body) {
+        potouche=false;
+    }
+
+    public override void _PhysicsProcess(float delta) {
+        if (potouche==true && bonhomme.isReverse) {
+            StaticBody2D sprite1=GetNode<StaticBody2D>("Pilier13");
+            StaticBody2D sprite2=GetNode<StaticBody2D>("Pilier14");
+            sprite1.Rotation=0.10472f;
+            sprite2.Rotation=-0.10472f;
+        }
+
+        if(Input.IsActionPressed("attack"))
+        {
+            AudioStreamPlayer2D hacheAudio= GetNode<Node>("Audios").GetNode<AudioStreamPlayer2D>("Hache");
+            //play it one time
+            hacheAudio.Play();
+        }
+    }
+
+    public void DiminueScore(String mechant)
+    {
+        if(mechant!=dernierMechantSauve)
+        {
+            GD.Print("mechant"+mechant);
+            GD.Print("dernier"+dernierMechantSauve);
+            score=score-scorePerEnemy;
+            GD.Print("score"+score);
+            //get piecesVisuals node
+            Node2D mechantsVisuels = GetNode<mouvementBonhomme>("Bonhomme").GetNode<Node2D>("Score");
+            //show it
+            mechantsVisuels.Visible = true;
+            //hide it after 2 seconds
+            GetTree().CreateTimer(2).Connect("timeout", mechantsVisuels, "HideIt");
+            //set score number in RichTextLabel
+            RichTextLabel mechantsLabel = mechantsVisuels.GetNode<RichTextLabel>("Text");
+            mechantsLabel.Text = score.ToString() + "PTS";
+
+            dernierMechantSauve=mechant;
+            ilfautsauver=false;
+
+        }
+    
+    }
+
+    
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)

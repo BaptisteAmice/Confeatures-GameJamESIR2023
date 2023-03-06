@@ -27,6 +27,8 @@ public class Piece : Area2D
             //emit signal to parent
             EmitSignal("PieceTouched");
             isCollected = true;
+            Game game = GetNode<Game>("/root/Game");
+            game.PieceCollected();
         }
         
     }

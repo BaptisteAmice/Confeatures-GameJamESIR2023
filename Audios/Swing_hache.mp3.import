@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Swing_hache.mp3-b5e044031223f560b08ed71242cb416e.mp3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

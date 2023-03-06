@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Hache_contre_bois.mp3-138d03d876e1b553f9109fd9e14942
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

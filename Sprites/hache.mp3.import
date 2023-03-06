@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hache.mp3-19d5cbbb730e1457e0bbf7242883f4e3.mp3str"
+
+[deps]
+
+source_file="res://Sprites/hache.mp3"
+dest_files=[ "res://.import/hache.mp3-19d5cbbb730e1457e0bbf7242883f4e3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
